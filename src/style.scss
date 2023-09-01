@@ -1,0 +1,357 @@
+
+@import "./assets/variables";
+@import "./assets/mixins";
+
+
+// ------------ОБЩИЕ НАСТРОЙКИ СТРАНИЦЫ----------
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    &.overlay{
+        overflow: hidden;
+    }
+}
+
+body{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $text-font;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background-color: $primary-light;
+    color: $primary-dark;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3ms ease;
+
+    &.overlay{
+        overflow: hidden;
+    }
+}
+
+header, main, footer{
+    width: 100%;
+}
+
+.overlay.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+h1, h2, h3, h4{
+    margin: 0;
+    font-weight: normal;
+} 
+p{
+    margin: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding-left: 0;
+}
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+._container{
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include small{
+        max-width: 1000px;
+        width: 100%;
+    }
+    @include xs{
+        max-width: 900px;
+        width: 100%;
+    }
+    @include xxs{
+        max-width: 500px;
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_pt40{
+        padding-top: 40px;
+        @include xs{
+            padding-top: 26px;
+        }
+    }
+    &_pt55{
+        padding-top: 55px;
+    }
+    &_pb80{
+        padding-bottom: 80px;
+
+        @include xs{
+          padding-bottom: 50px;
+        }
+    }
+    &__title-block{
+        @extend %flex-column;
+    
+        &_mb50{
+            margin-bottom: 50px;
+
+            @include xs{
+              margin-bottom: 30px;
+            }
+        }
+    }
+    &__content{
+        @extend %flex-row;
+
+        @include xs{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &-title{
+        color: $primary-dark;
+        font-family: $headings-font;
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 700;
+
+        &_wide{
+            max-width: 688px;
+            @include xs{
+                max-width: 100%;
+            }
+        }
+
+        &_bright{
+            color: $accent;
+        }
+
+        &_mb10{
+            margin-bottom: 10px;
+
+        }
+        &_mt10{
+            margin-top: 10px;
+        }
+    }
+    &-subtitle{
+        color: $primary-dark;
+        font-family: $headings-font;
+        font-size: 22px;
+        line-height: 1.37;
+        font-weight: 400;
+
+        @include small{
+            // font-size: 80px;
+        }
+
+        @include xxs{
+            // font-size: 38px;
+        }
+
+        &_wide{
+            max-width: 688px;
+            @include xs{
+                max-width: 100%;
+            }
+        }
+
+        &_bright{
+            color: $accent;
+        }
+
+        &_mb10{
+            margin-bottom: 10px;
+
+            @include small{
+                // margin-bottom: 100px;
+            }
+        
+            @include xxs{
+                // margin-bottom: 70px;
+            }
+        }
+        &_mt10{
+            margin-top: 10px;
+        }
+    }
+}
+
+
+.main-text{
+    font-family: $text-font;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @include xxs{
+        font-size: 16px;
+    }
+
+    &_mb{
+        &:not(:last-child){
+            margin-bottom: 25px;
+        }
+    }
+    &_wide{
+        width: 380px;
+        
+        @include small{
+          width: 444px;
+        }
+        @include xxs{
+            width: 100%;
+        }
+        }
+    &_dark{
+        color: $primary-dark;
+    }
+}
+
+.contacts-section{
+    display: flex;
+
+    &_align-items-center{
+        align-items: center;
+    }
+    &_align-items-start{
+        align-items: flex-start;
+    }
+
+    &__icon{
+        width: 26px;
+        height: 26px;
+        margin-right: 20px;
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text__block{
+        font-size: 14px;
+        line-height: 1;
+
+        &_bold{
+          font-size: 16px;
+          line-height: 1.5;
+          font-weight: 700;
+        }
+    }
+}
+.button{
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: none;
+    font-size: 14px;
+    color: $primary-light;
+    &:hover{
+        @extend %hover;
+    }
+    &_color{
+        background-color: $accent;
+        &:hover{
+            background-color: lighten($accent, 10%);
+            }
+}
+}
+.icon__wrap{
+    &_width40{
+        width: 40px;
+        height: 40px;
+    }
+    &_width26{
+        width: 26px;
+        height: 26px;
+    }
+    &_width24{
+        width: 24px;
+        height: 24px;
+    }
+    &_mr10{
+        margin-right: 10px;
+        @include small{
+            margin-right: 5px;
+          }
+    }
+    &_mr13{
+        margin-right: 13px;
+        @include small{
+            margin-right: 6px;
+          }
+    }
+    &_mr20{
+        margin-right: 20px;
+        @include small{
+            margin-right: 10px;
+          }
+    }
+}
+
+.subsection{
+    @extend %flex-column;
+        padding: 15px;
+
+        &-title__name{
+            font-size: 22px;
+
+            &_mb5{
+                margin-bottom: 5px;
+            }
+        }
+
+        &__m15{
+            margin: 15px;
+        }
+}
+
+.title__divider{
+    width: 100%;
+    height: 1px;
+    &_mb10{
+        margin-bottom: 10px;
+    }
+    &_mt10{
+        margin-top: 10px;
+    }
+    &_mb20{
+        margin-bottom: 20px;
+    }
+    &_mt20{
+        margin-top: 20px;
+    }
+    &_accent{
+        background-color: $accent;
+    }
+    &_neutral{
+        background-color: #1B1B1C;
+        opacity: 0.1;
+    }
+}
