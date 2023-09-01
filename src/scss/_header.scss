@@ -1,0 +1,150 @@
+@import '../assets/variables';
+@import '../assets/mixins';
+
+.header {
+    padding: 17px 0;
+    position: relative;
+    background-color: white;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        @include xs{
+            justify-content: space-between;
+            padding: 0 20px;
+          }
+    }
+    &__logo {
+        background-image: url('../assets/img/logo.png');
+        background-size: cover;
+        width: 250px;
+        height: 91px;
+        margin-right: 20px;
+
+        @include medium{
+            width: 200px;
+            height: 70px;
+            margin-right: 0;
+          }
+
+        @include small{
+          width: 160px;
+          height: 58px;
+        }
+    }
+    &__menu{
+        .menu__wrap{
+            @extend %flex-row;
+        }
+        
+        @include xs{
+            display: none;
+          }
+        &.active{
+            position: absolute;
+            top: 85px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            justify-content: flex-start;
+
+            .menu__wrap{
+                @extend %flex-column;
+                align-items: flex-start;
+                margin: 0 auto;
+
+                .header__menu__item{
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+    &__address{
+        margin-right: 86px;
+
+        @include xs{
+            margin-right: 0;
+          }
+    }
+    &__socials {
+        display: flex;
+        margin-right: 24px;
+        &:hover{
+            &:hover{
+                @extend %hover;
+            }
+        }
+        @include xs{
+            margin-right: 0;
+
+            &>*:not(:last-child){
+                margin-right: 10px;
+            }
+          }
+    }
+    &__phone{
+        margin-right: 44px;
+
+        @include small{
+            margin-right: 0;
+          }
+    }
+    &__button{
+        font-size: 14px;
+        line-height: 1.4;
+
+        @include xs{
+            margin: 10px 0;
+          }
+    }
+    &__burger{
+        display: none;
+        position: relative;
+        width: 30px;
+        height: 24px;
+        z-index: 999;
+        transition: 0.2s;
+        
+        @include xs{
+            display: block;
+          }
+        
+            &.active::before{
+                transform: rotate(45deg);
+                top: 11px;
+            }
+            &.active::after{
+                transform: rotate(-45deg);
+                bottom: 11px;
+            }
+            &.active span{
+                display: none;
+            }
+            & span{
+                content: '';
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 11px;
+                border-bottom: 3px solid $primary-dark;
+            }
+            &::before,
+            &::after{
+                content: '';
+                width: 100%;
+                position: absolute;
+                left: 0;
+                border-bottom: 3px solid $primary-dark;
+            }
+            &::before{
+                top: 1px;
+            }
+            &::after{
+                bottom: 1px;
+            }
+            }
+    
+}

@@ -1,0 +1,238 @@
+@import '../assets/variables';
+@import '../assets/mixins';
+
+.main {
+
+    &__preview {
+        background-image: url('../assets/img/preview.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 348px;
+        margin: 0 auto;
+
+        @include xs{
+            width: 70%;
+            height: 170px;
+            padding: 0 20px;
+          }
+          @include xs{
+            padding: 0 10px;
+          }
+    }
+    // -----------------УСЛУГИ---------------
+    .ads__content {
+      width: 100%;
+    }
+
+    .service__card {
+        @extend %flex-column;
+        justify-content: flex-start;
+        max-width: 268px;
+        height: 228px;
+        margin-top: 10px;
+        padding: 15px;
+        background-color: white;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+
+        @include xs{
+            max-width: 360px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    }
+    .service__list {
+        padding-left: 26.250px;
+        padding-bottom: 10px;
+        li{
+            list-style-type: unset;
+        }
+        
+        // @extend %flex-column;
+        // align-items: start;
+    }
+    .service__item{
+        width: 211px;
+
+        @include xs{
+            width: 303px;
+        }
+    }
+    }
+    .service__title {
+        @extend %flex-row;
+        align-self: flex-start;
+        &_mb10{
+            margin-bottom: 10px;
+        }
+        &__icon {
+            fill: $accent;
+        }
+    }
+
+// -----------------КОНСУЛЬТАЦИИ---------------
+    .consult__section{
+        background-color: white;
+        @include xs{
+            padding-bottom: 36px;
+        }
+    }
+
+    .consult__subtitle{
+        font-family: $headings-font;
+        font-size: 26px;
+        line-height: 1.37;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 0;
+
+        @include xs{
+            max-width: 360px;
+        }
+    }
+
+    .consult__steps{
+        align-items: flex-start;
+        @include xs{
+            align-items: center;
+        }
+    }
+    .consult__icon__wrap{
+        @include xs{
+            margin-right: 10px;
+        }
+    }
+    .step__card{
+        @extend %flex-row;
+        align-items: flex-start;
+        margin: 10px 0;
+
+        @include xs{
+            margin: 15px 0;
+            padding: 15px 0;
+        }
+    }
+
+    .step__icon{
+        fill: $accent;
+    }
+    .step__description{
+        width: 300px;
+    }
+// -----------------ОТЗЫВЫ---------------
+    .feedback__title{
+        font-size: 40px;
+        font-weight: 500;
+        padding: 10px 0;
+    }
+
+    .feedback__list {
+        align-items: stretch;
+        align-content: stretch;
+        justify-content: flex-start;
+
+        @include xs{
+            align-items: center;
+        }
+    }
+
+    .feedback__card {
+        margin: unset;
+        align-content: space-between;
+        align-items: flex-start;
+    }
+
+    .feedback__description {
+        max-width: 350px;
+        &_pt10{
+            padding-top: 10px;
+        }
+        &_pb20{
+            padding-bottom: 20px;
+        }
+    }
+
+    .feedback__author {
+        @extend %flex-row;
+        justify-content: start;
+        font-weight: bold;
+    }
+    .feedback__author__divider {
+        width: 2px;
+        height: 16px;
+        background-color: $primary-dark;
+
+        &_mr13{
+            margin-right: 13px;
+        }
+    }
+// -----------------КОНТАКТЫ---------------
+    .contacts__title-block{
+        align-items: flex-start;
+    }
+    .contacts__title{
+        font-size: 22px;
+    }
+    .contacts__subtitle{
+        font-family: $text-font;
+        font-size: 16px;
+    }
+    .contacts__map{
+        width: 100%;
+    }
+    .contacts__section{
+        position: relative;
+    }
+    .contacts__info{
+        position: absolute;
+        top: 70px;
+        left: 160px;
+
+        @include xs{
+            position: unset;
+            margin: 0 auto;
+        }
+
+        &__content{
+            width: 400px;
+            padding: 40px;
+            background-color: white;
+            color: black;
+
+            @include xs{
+                margin: 0 auto;
+            }
+        }
+        
+    }
+    .contacts__icon__wrapper{
+        width: 26px;
+        height: 26px;
+
+        &_mr10{
+            margin-right: 10px;
+        }
+    }
+    .contacts__details{
+        @extend %flex-column;
+        align-items: flex-start;
+        width: 320px;
+        margin-bottom: 15px;
+    }
+    .contacts__icon{
+        width: 100%;
+        height: 100%;
+    }
+    .contacts__text{
+        font-size: 16px;
+        font-weight: 400px;
+
+        &_pt10{
+            padding-top: 10px;
+        }
+
+        &_pb10{
+            padding-bottom: 10px;
+        }
+    }
