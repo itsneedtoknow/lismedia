@@ -4,19 +4,16 @@
 .main {
 
     &__preview {
-        background-color: white;
-        
-        &__container{
             background-image: url('../assets/img/preview.png');
             background-size: contain;
             background-repeat: no-repeat;
-            // width: 100%;
-            height: 245px;
+            width: 100%;
+            height: 290px;
             margin: 0 auto;
 
         @include xs{
             width: 70%;
-            height: 140px;
+            height: 180px;
             padding: 0 20px;
           }
           @include xs{
@@ -64,7 +61,7 @@
             width: 303px;
         }
     }
-    }
+    
     .service__title {
         @extend %flex-row;
         align-self: flex-start;
